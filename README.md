@@ -6,4 +6,4 @@ by any attribute in the array.
 
 Here shown with the array ordered by date:
 [//]: # (Comment) ![assignment01](images/assignment01.png)
-<figure><img src="images/assignment01.png" alt="image" width="400" height="200"></figure>
+<figure><img src="images/assignment01.png" alt="image" width="400" height="400"></figure>
