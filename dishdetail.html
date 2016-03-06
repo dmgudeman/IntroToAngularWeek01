@@ -29,7 +29,6 @@
         <div class="row row-content" ng-controller="dishDetailController as dishCtrl">
         <div class="col-xs-12">
             <div class="media">
-
                         <a class= "pull-left" href="#">
                             <img class="media-object img-thumbnail" ng-src={{dishCtrl.dish.image}} alt="Ulthapizza">
                         </a>
@@ -39,12 +38,6 @@
                     <p>{{dishCtrl.dish.description}}</p>
                 </div>
             </div>
-            <div>
-                <p>{{dish.description}}</p>
-                <p>Comment: {{dishCtrl.userSortBy}}</p>
-                <p>Type your comment:
-                    <input type="text" ng-model="dishCtrl.userSortBy"></p>
-            </div>
         </div>
         <div class="col-xs-9 col-xs-offset-1">
                 <div class="parent">
@@ -52,24 +45,13 @@
                     <span class ="small"> Sort By:
                     <input type="text" ng-model="dishCtrl.userSortBy"></span>
                 </div>
-            <div class="parent">
-                <span class="big">Hey!</span>
-                <span class="small">I am tiny compaired to my brother</span>
-                <span class="small">So am I..</span>
-            </div>
-
                 <div ng-repeat="comment in dishCtrl.dish.comments | orderBy: dishCtrl.userSortBy">
-
                     <blockquote>
                         <p>rating: {{comment.rating}}</p>
                         <p>{{comment.comment}}</p>
                         <footer>{{comment.author}}, {{comment.date | date:'fullDate'}}</footer>
                     </blockquote>
-
-
                 </div>
-
-
         </div>
     </div>
 
