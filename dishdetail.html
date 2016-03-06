@@ -48,7 +48,7 @@
         </div>
         <div class="col-xs-9 col-xs-offset-1">
 
-                <div ng-repeat="comment in dishCtrl.dish.comments">
+                <div ng-repeat="comment in dishCtrl.dish.comments | orderBy: dishCtrl.userSortBy">
 
                     <blockquote>
                         <p>rating: {{comment.rating}}</p>
