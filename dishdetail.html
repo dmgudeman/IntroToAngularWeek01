@@ -30,8 +30,10 @@
 
 <body>
 <div class="container">
+        <!--Task 1 Set up row to use the dishDetailController-->
         <div class="row row-content" ng-controller="dishDetailController as dishCtrl">
         <div class="col-xs-12">
+            <!--Task 1 Use the Bootstrap Media Object to display the information about the dish-->
             <div class="media">
                         <a class= "pull-left" href="#">
                             <img class="media-object img-thumbnail" ng-src={{dishCtrl.dish.image}} alt="Ulthapizza">
@@ -47,12 +49,16 @@
                 <div class="commentSort">
                     <span class="big">Customer Comments</span>
                     <span class ="small"> Sort By:
+                       <!--Task 3 - input field set up that uses the orderBy filter  -->
                     <input type="text" ng-model="dishCtrl.userSortBy"></span>
                 </div>
+                <!-- Task 2 construct comments by iterating over the the comment array with an ng-directive -->
                 <div ng-repeat="comment in dishCtrl.dish.comments | orderBy: dishCtrl.userSortBy">
+                    <!--Task 2 - us the Boostrap blockquote class to format the comments -->
                     <blockquote>
                         <p>rating: {{comment.rating}}</p>
                         <p>{{comment.comment}}</p>
+                        <!-- Task 2 format the date field using Angular date filter -->
                         <footer>{{comment.author}}, {{comment.date | date:'fullDate'}}</footer>
                     </blockquote>
                 </div>
@@ -74,7 +80,8 @@
             category: 'mains',
             label:'Hot',
             price:'4.99',
-            description:'A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.',
+            description:'A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola ' +
+            'olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.',
             comments: [
                 {
                     rating:5,
